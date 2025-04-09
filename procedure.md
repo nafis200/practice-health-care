@@ -1,0 +1,1 @@
+1. app.ts e kaj kori global error etc
