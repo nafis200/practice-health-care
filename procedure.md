@@ -8,3 +8,5 @@
 5. user.controller ebong route e kaj kori
 
 6. user.services e transaction kaj kori
+
+7. user.services e hasing use kori
