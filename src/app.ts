@@ -3,6 +3,7 @@ const app:Application = express()
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import router from './app/routes';
 const port = 3000
 
 app.use(cors());
@@ -18,6 +19,8 @@ app.get('/', (req: Request, res: Response) => {
         Message: "Ph health care server.."
     })
 });
+
+app.use('/api/v1',router)
 
 app.use(globalErrorHandler)
 
