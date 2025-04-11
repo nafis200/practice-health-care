@@ -75,11 +75,19 @@ const getAllFromDB = async (params: IAdminFilterRequest, options: IPaginationOpt
         }
   });
 
-//   const total = await prisma.admin.count({
-//     where: whereConditons
-// });
+  const total = await prisma.admin.count({
+    where: whereConditons
+});
 
- return result
+// return {
+//   meta: {
+//       page,
+//       limit,
+//       total
+//   },
+//   data: result
+// };
+return result
 };
 
 export const AdminService = {

@@ -32,7 +32,7 @@ const getAllFromDB = catchAsync(async(req:Request,res:Response)=>{
         statusCode: httpStatus.OK,
         success: true,
         message: "Admin data fetched!",
-        // meta: result.result,
+        // meta: result.meta,
         data: result
     })
 
