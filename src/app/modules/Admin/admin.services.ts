@@ -115,6 +115,8 @@ const getByIdFromDB = async (id: string): Promise<Admin | null> => {
 };
 
 const updateIntoDB = async (id: string, data: Partial<Admin>): Promise<Admin> => {
+
+
   await prisma.admin.findUniqueOrThrow({
       where: {
           id,
