@@ -61,7 +61,7 @@ const getAllFromDB = async (params: IAdminFilterRequest, options: IPaginationOpt
 })
 //   console.log(Object.keys(filterData))
 
-  //   console.dir(andCondions,{depth:'infinity'})
+
 
   const whereConditons: Prisma.AdminWhereInput = { AND: andCondions };
 
@@ -79,7 +79,7 @@ const getAllFromDB = async (params: IAdminFilterRequest, options: IPaginationOpt
   });
 
   const total = await prisma.admin.count({
-    where: whereConditons
+    where: whereConditons,
 });
 
 // return {
