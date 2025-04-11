@@ -12,5 +12,9 @@ Req.query er moddhe searchTerm e pabo
 
 3. Search + filtering e ache
 
+4. ValidData + pickFunctions
+
+Validity check then take data
+
 
 
