@@ -24,16 +24,16 @@ const getAllFromDB = catchAsync(async(req:Request,res:Response)=>{
     const filters = pick(req.query, adminFilterableFields);
     // export const adminFilterableFields = ['name', 'email', 'searchTerm', 'contactNumber'];
     const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder'])
-    console.log(options)
-    console.log(filters)
+    // console.log(options)
+    // console.log(filters)
     const result = await AdminService.getAllFromDB(filters, options)
-
+    // console.log(result.result)
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,
         message: "Admin data fetched!",
-        // meta: result.meta,
-        data: result
+        meta: result.meta,
+        data: result.data
     })
 
 })
@@ -67,6 +67,7 @@ const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
     const { id } = req.params;
 
     const result = await AdminService.deleteFromDB(id);
+
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,

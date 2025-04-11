@@ -67,7 +67,7 @@ const getAllFromDB = async (params: IAdminFilterRequest, options: IPaginationOpt
 
 //   console.dir(whereConditons, { depth: "infinity" });
 
-  const result = prisma.admin.findMany({
+  const result = await prisma.admin.findMany({
     where: whereConditons,
         skip,
         take: limit,
@@ -90,7 +90,14 @@ const getAllFromDB = async (params: IAdminFilterRequest, options: IPaginationOpt
 //   },
 //   data: result
 // };
-return result
+return {
+  meta: {
+    page,
+    limit,
+    total
+},
+data: result
+}
 };
 
 
