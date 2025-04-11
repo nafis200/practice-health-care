@@ -38,7 +38,61 @@ const getAllFromDB = catchAsync(async(req:Request,res:Response)=>{
 
 })
 
+const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    const result = await AdminService.getByIdFromDB(id);
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: "Admin data fetched by id!",
+        data: result
+    });
+})
+
+
+const updateIntoDB = catchAsync(async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    const result = await AdminService.updateIntoDB(id, req.body);
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: "Admin data updated!",
+        data: result
+    })
+})
+
+const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    const result = await AdminService.deleteFromDB(id);
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: "Admin data deleted!",
+        data: result
+    })
+})
+
+
+const softDeleteFromDB = catchAsync(async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    const result = await AdminService.softDeleteFromDB(id);
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: "Admin data deleted!",
+        data: result
+    })
+});
+
 export const AdminController = {
     getAllFromDB,
+    getByIdFromDB,
+    updateIntoDB,
+    deleteFromDB,
+    softDeleteFromDB
 }
 
