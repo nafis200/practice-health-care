@@ -22,6 +22,7 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
             accessToken: result.accessToken,
             needPasswordChange: result.needPasswordChange
         }
+        
     })
 });
 

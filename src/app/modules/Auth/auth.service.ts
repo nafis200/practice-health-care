@@ -1,13 +1,13 @@
-
+import type { Secret } from "jsonwebtoken";
+import config from "../../../config";
+import { UserStatus } from "../../../generated/prisma";
 import { jwtHelpers } from "../../../helpars/jwtHelpers";
 import prisma from "../../../shared/prisma";
 import * as bcrypt from 'bcrypt'
-import config from "../../../config";
-import { Secret } from "jsonwebtoken";
 import emailSender from "./emailSender";
 import ApiError from "../../errors/ApiError";
 import httpStatus from "http-status";
-import { UserStatus } from "../../../generated/prisma";
+
 
 const loginUser = async (payload: {
     email: string,
@@ -143,7 +143,7 @@ const forgotPassword = async (payload: { email: string }) => {
         </div>
         `
     )
-    //console.log(resetPassLink)
+    console.log(resetPassLink)
 };
 
 const resetPassword = async (token: string, payload: { id: string, password: string }) => {

@@ -22,3 +22,5 @@ export const adminValidationSchemas = {
 <!-- ..........59.3..................... -->
 
 6. Ipagination Object
+
+7. Auth e kaj kori
