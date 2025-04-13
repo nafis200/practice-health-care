@@ -22,3 +22,4 @@
 22. npm i @types/multer
 23. npm i cloudinary
 24. npm i http-status
+25. npm i nodemailer
