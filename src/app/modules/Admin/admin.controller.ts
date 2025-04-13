@@ -19,7 +19,7 @@ import pick from "../../../shared/pick";
 // }
 
 // export default pick;
-const getAllFromDB = catchAsync(async(req:Request,res:Response)=>{
+const getAllFromDB:RequestHandler = catchAsync(async(req:Request,res:Response)=>{
 
     const filters = pick(req.query, adminFilterableFields);
     // export const adminFilterableFields = ['name', 'email', 'searchTerm', 'contactNumber'];
@@ -38,7 +38,7 @@ const getAllFromDB = catchAsync(async(req:Request,res:Response)=>{
 
 })
 
-const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
+const getByIdFromDB:RequestHandler = catchAsync(async (req: Request, res: Response) => {
     const { id } = req.params;
 
     const result = await AdminService.getByIdFromDB(id);
@@ -51,7 +51,7 @@ const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
 })
 
 
-const updateIntoDB = catchAsync(async (req: Request, res: Response) => {
+const updateIntoDB:RequestHandler = catchAsync(async (req: Request, res: Response) => {
     const { id } = req.params;
 
     const result = await AdminService.updateIntoDB(id, req.body);
@@ -63,7 +63,7 @@ const updateIntoDB = catchAsync(async (req: Request, res: Response) => {
     })
 })
 
-const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
+const deleteFromDB:RequestHandler = catchAsync(async (req: Request, res: Response) => {
     const { id } = req.params;
 
     const result = await AdminService.deleteFromDB(id);
@@ -77,7 +77,7 @@ const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
 })
 
 
-const softDeleteFromDB = catchAsync(async (req: Request, res: Response) => {
+const softDeleteFromDB:RequestHandler = catchAsync(async (req: Request, res: Response) => {
     const { id } = req.params;
 
     const result = await AdminService.softDeleteFromDB(id);

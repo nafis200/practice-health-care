@@ -1,5 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { AdminController } from './admin.controller';
+import validateRequest from '../../middlewares/validateRequest';
+import { adminValidationSchemas } from './admin.validation';
 
 
 const router = express.Router();
@@ -10,8 +12,11 @@ router.get(
 
 router.patch(
     '/:id',
+    // auth(UserRole.SUPER_ADMIN, UserRole.ADMIN),
+    validateRequest(adminValidationSchemas.update),
     AdminController.updateIntoDB
 );
+
 
 router.delete(
     '/:id',
