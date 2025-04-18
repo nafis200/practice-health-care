@@ -28,5 +28,17 @@ karon req.user name kichui nai so eita lagbe tai req.user = token insert kore de
 APP_PASS = "szadaqphwubtxggc"
 password space thakbe ta remove korte hobe.
 
+10. Unable to send Mail through node-mailer
+
+11.  tls: {
+      rejectUnauthorized: false,
+    }, eita dite hobe.
+
+12. 61-10 User ID and token niye nibo.
+
+13. Reset password er maddome password change.
+
+
+
 
 
