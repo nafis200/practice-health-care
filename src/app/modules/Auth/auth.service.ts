@@ -124,6 +124,7 @@ const forgotPassword = async (payload: { email: string }) => {
         config.jwt.reset_pass_token_expires_in as string
     )
     //console.log(resetPassToken)
+    // http://localhost:3000/reset-password-fronted?email="nafisahamed14@gmail.com"&token=sffsdfd121
 
     const resetPassLink = config.reset_pass_link + `?userId=${userData.id}&token=${resetPassToken}`
 
