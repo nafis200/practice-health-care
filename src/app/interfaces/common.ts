@@ -1,4 +1,5 @@
-import { UserRole } from "@prisma/client";
+import type { UserRole } from "../../generated/prisma";
+
 
 export type IAuthUser = {
     email: string;
