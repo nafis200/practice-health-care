@@ -54,3 +54,9 @@ import { v2 as cloudinary } from 'cloudinary';
 })();
 
 <!-- json parse korte hobe -->
+
+7. uploads file theke remove kore dibo
+
+ fs.unlinkSync(file.path) remove this from uploads file.
+
+ 8. Type define
