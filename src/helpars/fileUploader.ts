@@ -6,9 +6,9 @@ import { ICloudinaryResponse, IFile } from "../app/interfaces/file";
 
 
 cloudinary.config({
-    cloud_name: 'dbgrq28js',
-    api_key: '173484379744282',
-    api_secret: 'eHKsVTxIOLl5oaO_BHxBQWAK3GA'
+    cloud_name:'df1plpdvy',
+    api_key:'649986973974398',
+    api_secret:'808c9UT7GiROhPZCl5eS2kDvRAo'
 });
 
 const storage = multer.diskStorage({
@@ -23,6 +23,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 const uploadToCloudinary = async (file: IFile): Promise<ICloudinaryResponse | undefined> => {
+
+    // console.log({file})
+
     return new Promise((resolve, reject) => {
         cloudinary.uploader.upload(file.path,
             (error: Error, result: ICloudinaryResponse) => {

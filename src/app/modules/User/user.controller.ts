@@ -12,6 +12,9 @@ import { userService } from "./user.services";
 
 const createAdmin = catchAsync(async (req: Request, res: Response) => {
 
+    // console.log(req.file)
+    // console.log(req.body.data)
+
     const result = await userService.createAdmin(req);
     sendResponse(res, {
         statusCode: httpStatus.OK,
