@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
+// Static file serve route (PDF, etc.)
+app.use('/docs', express.static(path.join(__dirname, 'app/docs')));
 
 
 app.get('/', (req: Request, res: Response) => {
@@ -28,6 +30,8 @@ app.get('/', (req: Request, res: Response) => {
 app.use('/api/v1',router)
 
 // app.use(globalErrorHandler)
+
+
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     res.status(httpStatus.NOT_FOUND).json({
