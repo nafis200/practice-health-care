@@ -8,7 +8,7 @@ import router from './app/routes';
 import path from 'path';
 const port = 3000
 
-app.use(cors());
+app.use(cors({ origin: '*'}));
 app.use(cookieParser());
 
 //parser
