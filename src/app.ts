@@ -5,6 +5,7 @@ import httpStatus from 'http-status';
 import cookieParser from 'cookie-parser';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import router from './app/routes';
+import path from 'path';
 const port = 3000
 
 app.use(cors());
@@ -13,6 +14,9 @@ app.use(cookieParser());
 //parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './views'));
 
 
 app.get('/', (req: Request, res: Response) => {
