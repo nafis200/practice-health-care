@@ -8,6 +8,11 @@ import { IAuthUser } from '../../interfaces/common';
 import { ISchedule,IFilterRequest } from './schedule.interface';
 import type { Prisma, Schedule } from '../../../generated/prisma';
 
+// StartDate:"2024-06-27",
+// endDate:"2024-06-29"
+// StartTime:"9.30"
+// endTime:"15.00"
+
 const inserIntoDB = async (payload: ISchedule): Promise<Schedule[]> => {
     const { startDate, endDate, startTime, endTime } = payload;
 
