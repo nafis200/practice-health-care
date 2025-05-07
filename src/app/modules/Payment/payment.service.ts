@@ -53,6 +53,8 @@ const validatePayment = async (payload: any) => {
 
     const response = payload;
 
+    // prod level e const response = payload comment and above are uncomment
+
     await prisma.$transaction(async (tx) => {
         const updatedPaymentData = await tx.payment.update({
             where: {
